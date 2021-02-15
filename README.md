@@ -1,3 +1,3 @@
 # BlackBoxCore
 
-A description of this package.
+Swift Package to Encrypt and Decrypt Files [WIP].
