@@ -2,14 +2,10 @@ import XCTest
 @testable import BlackBoxCore
 
 final class BlackBoxCoreTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(BlackBoxCore().text, "Hello, World!")
+    static var allTests: [(String, XCTestCase)] {
+//        var tests = [(String, XCTestCase)]()
+//        tests += DataEncryptorTests.allTests,
+//        tests += RandomGeneratorTests.allTests
+        fatalError()
     }
-
-    static var allTests = [
-        ("testExample", testExample),
-    ]
 }
