@@ -15,7 +15,7 @@ public protocol DataEncryptor {
 
 public protocol DataDecryptor {
     func decrypt(_ sealed: AES.GCM.SealedBox,
-                 key: SymmetricKey) throws -> Data
+                 key: SymmetricKey) throws -> [UInt8]
 }
 
 public struct BlackBoxDataEncryptor: DataEncryptor {
@@ -28,8 +28,8 @@ public struct BlackBoxDataEncryptor: DataEncryptor {
 
 public struct BlackBoxDataDecryptor: DataDecryptor {
     public func decrypt(_ sealed: AES.GCM.SealedBox,
-                        key: SymmetricKey) throws -> Data {
+                        key: SymmetricKey) throws -> [UInt8] {
         let decrypted = try AES.GCM.open(sealed, using: key)
-        return decrypted
+        return [UInt8](decrypted)
     }
 }

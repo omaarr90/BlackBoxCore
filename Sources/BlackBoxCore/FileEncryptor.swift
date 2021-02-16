@@ -56,7 +56,8 @@ public struct BlackBoxFileDecryptor: FileDecryptor {
         }
         let sealed = try AES.GCM.SealedBox(combined: contents)
         let open = try BlackBoxDataDecryptor().decrypt(sealed, key: key)
-        try open.write(to: toURL, options: options)
+        let data = Data(open)
+        try data.write(to: toURL, options: options)
         fatalError()
     }
 }
